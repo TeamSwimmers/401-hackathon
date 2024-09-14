@@ -1,0 +1,25 @@
+/* button.module.css */
+.buttonContainer {
+  display: flex; /* Use flexbox to align buttons side by side */
+  gap: 10px; /* Add some space between the buttons */
+}
+
+.pageButton {
+    width: 100px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 30px;
+  }
+  
+  .pageButton img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
