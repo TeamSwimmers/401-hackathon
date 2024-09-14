@@ -1,44 +1,23 @@
-"use client";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import CarouselSection from "./components/carousel-section";
+import { columns, Job } from "./components/columns";
+import { DataTable } from "./components/data-table";
 
-import Autoplay from "embla-carousel-autoplay";
+async function getJobs() {
+  return fetch("http://localhost:4000/api/jobs", { method: "GET" });
+}
 
-export default function Discover() {
+export default async function Discover() {
+  const data = await (await getJobs()).json();
+
   return (
     <div className="w-full h-full flex-col flex items-center container py-6 gap-6">
-      <Carousel
-        className="w-full md:max-w-2xl lg:max-w-3xl"
-        plugins={[
-          Autoplay({
-            delay: 7000,
-          }),
-        ]}
-      >
-        <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex aspect-[21/9] items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        {/* <CarouselPrevious />
-        <CarouselNext /> */}
-      </Carousel>
+      <div className="flex flex-col gap-2 w-full md:max-w-2xl lg:max-w-3xl">
+        {/* <h1 className="font-semibold text-2xl">Spotlight</h1> */}
+        <CarouselSection />
+      </div>
       <div className="w-full md:max-w-2xl lg:max-w-3xl">
         <h1 className="font-semibold text-2xl">Discover</h1>
+        <DataTable data={data} columns={columns} />
       </div>
     </div>
   );

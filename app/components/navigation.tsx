@@ -29,7 +29,21 @@ export default function Navigation() {
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-              Features
+              Discover
+            </Link>
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Resume
+            </Link>
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Applications
             </Link>
             <Link
               href="#"
@@ -71,7 +85,7 @@ export default function Navigation() {
               variant={"link"}
               asChild
             >
-              <Link className="" href="#" scroll={false}>
+              <Link className="" href="/discover" scroll={false}>
                 Discover
               </Link>
             </Button>
@@ -80,7 +94,7 @@ export default function Navigation() {
               variant={"link"}
               asChild
             >
-              <Link className="" href="/user" scroll={false}>
+              <Link className="" href="/resume" scroll={false}>
                 Resume
               </Link>
             </Button>
@@ -89,7 +103,7 @@ export default function Navigation() {
               variant={"link"}
               asChild
             >
-              <Link className="" href="/ask" scroll={false}>
+              <Link className="" href="/applications" scroll={false}>
                 Applications
               </Link>
             </Button>
