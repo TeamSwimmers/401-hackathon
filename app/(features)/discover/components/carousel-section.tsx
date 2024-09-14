@@ -10,7 +10,12 @@ import {
 
 import Autoplay from "embla-carousel-autoplay";
 
-export default function CarouselSection() {
+export interface Props {
+  indexes: number[];
+  data: any;
+}
+
+export default function CarouselSection(props: Props) {
   return (
     <Carousel
       className="w-full"
@@ -21,12 +26,20 @@ export default function CarouselSection() {
       ]}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {props.indexes.map((value, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
-                <CardContent className="flex w-full h-60 items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                <CardContent className="flex flex-col w-full h-60 items-start justify-center p-6">
+                  <span className="text-4xl font-semibold">
+                    {props.data[value].companyName}
+                  </span>
+                  <span className="text-xl font-medium pl-1">
+                    {props.data[value].role}
+                  </span>
+                  <span className="text-md font-medium pl-1">
+                    {props.data[value].location}
+                  </span>
                 </CardContent>
               </Card>
             </div>
