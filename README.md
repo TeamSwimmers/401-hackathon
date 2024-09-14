@@ -37,19 +37,16 @@ Base URL: `http://localhost:3000/api/applications`
 - **POST** `/api/applications`
 - **Description:** Adds a new job application.
 - **Body:**
-  ```json
-  { "id": 1, "company": "ABC Corp", "position": "Software Engineer", "status": "Applied" }
+  ```json ` { "id": 1, "company": "ABC Corp", "position": "Software Engineer", "status": "Applied" } `
 
 ### 3. Update an Application
 - **PUT** `/api/applications`
 - **Description:** Updates an existing application.
 - **Body:**
-  ```json
-  { "id": 1, "company": "ABC Corp", "position": "Senior Engineer", "status": "Interview" }
+  ```json `{ "id": 1, "company": "ABC Corp", "position": "Senior Engineer", "status": "Interview" } `
 
 ### 4. Delete an Application
 - **DELETE** `/api/applications`
 - **Description:** Deletes an application by ID.
 - **Body:**
-  ```json
-  { "id": 1 }
+  ```json ` { "id": 1 } `
